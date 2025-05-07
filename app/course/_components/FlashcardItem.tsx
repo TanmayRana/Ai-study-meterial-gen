@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import ReactCardFlip from "react-card-flip";
 
-const FlashcardItem = ({ isFlipped, handleClick, data }) => {
+const FlashcardItem = ({ isFlipped, handleClick, data }: any) => {
   return (
     <div className="flex items-center justify-center">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
