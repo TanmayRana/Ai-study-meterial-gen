@@ -225,9 +225,15 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+type Note = {
+  id: string;
+  notes: string;
+  title?: string;
+};
+
 const ViewNotes = () => {
   const { courseId } = useParams();
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState<Note[]>([]);
   const [stepCount, setStepCount] = useState(0);
   const router = useRouter();
 
@@ -247,6 +253,8 @@ const ViewNotes = () => {
       console.error("Error fetching notes:", error);
     }
   };
+
+  console.log("Notes=", notes);
 
   return (
     notes &&
